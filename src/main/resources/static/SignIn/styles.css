@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+Condensed");
+body {
+  background-color: #fafafa;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: 80px;
+}
+
+.logo a {
+  font-size: 70px;
+  font-weight: 600;
+  font-family: "Encode Sans Condensed", sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .sign a {
+  text-decoration: none;
+  color: black;
+  font-family: "Encode Sans Condensed", sans-serif;
+}
