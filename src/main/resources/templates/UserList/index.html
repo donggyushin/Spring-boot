@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./UserList/styles.css">
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <a href="../index.html">GYU</a>
+    </div>
+    <div class="littleBox">
+      <div class="sign">
+        <a href="../SignUp/index.html">sign up</a>
+        <span>||</span>
+        <a href="../SignIn/index.html">sign in</a>
+      </div>
+      <div class="icon">
+        <a href="#"><i class="glyphicon glyphicon-user"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <span>User List</span>
+      <hr>
+    </div>
+    <div class="userList">
+      <div class="userList__row">
+        <span>ID</span>
+        <span>Name</span>
+        <span>E-mail</span>
+      </div>
+      <hr>
+      {{#users}}
+      <div class="userList__row">
+        <span>{{id}}</span>
+        <span>{{name}}</span>
+        <span>{{email}}</span>
+      </div>
+      <hr>
+      {{/users}}
+      
+    </div>
+  </div>
+</body>
+</html>
