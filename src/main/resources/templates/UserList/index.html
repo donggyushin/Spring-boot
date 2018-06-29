@@ -8,22 +8,7 @@
 
 </head>
 <body>
-  <div class="navbar">
-    <div class="logo">
-      <a href="../index.html">GYU</a>
-    </div>
-    <div class="littleBox">
-      <div class="sign">
-        <a href="../SignUp/index.html">sign up</a>
-        <span>||</span>
-        <a href="../SignIn/index.html">sign in</a>
-      </div>
-      <div class="icon">
-        <a href="/list"><i class="glyphicon glyphicon-user"></i></a>
-      </div>
-    </div>
-
-  </div>
+  {{> /include/Navigation/index}}
 
   <div class="container">
     <div class="header">
@@ -35,6 +20,7 @@
         <span>ID</span>
         <span>Name</span>
         <span>E-mail</span>
+        <span></span>
       </div>
       <hr>
       {{#users}}
@@ -42,10 +28,11 @@
         <span>{{id}}</span>
         <span>{{name}}</span>
         <span>{{email}}</span>
+        <span><a href="/update/{{key}}">Edit</a></span>
       </div>
       <hr>
       {{/users}}
-      
+
     </div>
   </div>
 </body>

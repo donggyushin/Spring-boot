@@ -1,0 +1,88 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+Condensed");
+
+body {
+  background-color: #fafafa;
+  font-family: "Encode Sans Condensed", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: 80px;
+}
+
+.logo a {
+  font-size: 70px;
+  font-weight: 600;
+  font-family: "Encode Sans Condensed", sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .sign a {
+  text-decoration: none;
+  color: black;
+  font-family: "Encode Sans Condensed", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  background-color: white;
+  padding: 35px;
+  text-align: center;
+}
+
+.form__container__row input {
+  width: 100%;
+  height: 40px;
+  background-color: #fafafa;
+  color: #999999;
+  border: 0px;
+  margin: 7px;
+  font-size: 15px;
+}
+
+#gyu {
+  font-size: 100px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+#desc {
+  font-size: 30px;
+  font-weight: 400;
+  color: #999999;
+  margin-bottom: 20px;
+}
+
+#button {
+  height: 35px;
+  background-color: #1991f4;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.icon {
+  margin-top: 10px;
+  float: right;
+}
+
+.icon i {
+  font-size: 20px;
+  color: black;
+}
+
+.icon a {
+  text-decoration: none;
+  color: black;
+}

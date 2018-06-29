@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/Update/styles.css">
+<title>Insert title here</title>
+</head>
+<body>
+{{> /include/Navigation/index}}
+
+<div class="container">
+  <div class="EditBox">
+    <h1>Edit you profile</h1>
+    <form class="EditBox__form" action="#" method="post">
+    {{#user}}
+      <input type="text" name="id" value="{{id}}" placeholder="new ID">
+      <input type="password" name="password" value="{{password}}" placeholder="new Password">
+      <input type="text" name="name" value="{{name}}" placeholder="new name">
+      <input type="email" name="email" value="{{email}}" placeholder="new email">
+      <input type="submit" id="submit__button" value="Edit">
+      {{/user}}
+    </form>
+  </div>
+</div>
+</body>
+</html>
