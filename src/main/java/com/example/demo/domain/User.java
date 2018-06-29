@@ -52,6 +52,12 @@ public class User {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + "]";
 	}
 	
+	public void update(User user) {
+		this.name = user.name;
+		this.password = user.password;
+		this.email = user.email;
+	}
+	
 	
 	
 	

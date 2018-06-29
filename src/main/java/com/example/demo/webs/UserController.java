@@ -52,4 +52,12 @@ public class UserController {
 		model.addAttribute("user", user);
 		return "Update/index";
 	}
+	
+	@PostMapping("/updateAction/{id}")
+	public String updateAction(@PathVariable Long id, User updatedUser) {
+		User user = userRepository.findById(id).get();
+		user.update(updatedUser);
+		userRepository.save(user);
+		return "redirect:/list";
+	}
 }

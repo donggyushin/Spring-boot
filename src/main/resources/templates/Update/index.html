@@ -12,15 +12,17 @@
 <div class="container">
   <div class="EditBox">
     <h1>Edit you profile</h1>
-    <form class="EditBox__form" action="#" method="post">
     {{#user}}
+    <form class="EditBox__form" action="/updateAction/{{key}}" method="post">
+    
       <input type="text" name="id" value="{{id}}" placeholder="new ID">
       <input type="password" name="password" value="{{password}}" placeholder="new Password">
       <input type="text" name="name" value="{{name}}" placeholder="new name">
       <input type="email" name="email" value="{{email}}" placeholder="new email">
       <input type="submit" id="submit__button" value="Edit">
-      {{/user}}
+      
     </form>
+    {{/user}}
   </div>
 </div>
 </body>
