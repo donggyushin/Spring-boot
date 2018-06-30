@@ -10,6 +10,21 @@
 <body>
   {{> /include/Navigation/index}}
 
-sign in
+  <div class="container">
+    <img src="../media/insta.png" alt="image">
+    <form class="signupform" action="/login" method="post">
+      <div class="form__container">
+        <span id="gyu">GYU</span>
+        <span id="desc">Please Sign in to join!</span>
+        <div class="form__container__row">
+          <input type="text" name="id" placeholder="input ID...">
+        </div>
+        <div class="form__container__row">
+          <input type="password" name="password" placeholder="input Password...">
+        </div>
+        <input id="button" type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
 </body>
 </html>

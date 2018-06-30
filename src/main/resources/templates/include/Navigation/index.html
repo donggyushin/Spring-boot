@@ -1,12 +1,19 @@
 <div class="navbar">
     <div class="logo">
-      <a href="/index.html">GYU</a>
+      <a href="/">GYU</a>
     </div>
     <div class="littleBox">
       <div class="sign">
+      {{^sessionedUser}}
         <a href="/SignUp">sign up</a>
         <span>||</span>
         <a href="/SignIn">sign in</a>
+      {{/sessionedUser}}
+      {{#sessionedUser}}  
+        <a href="/update/{{key}}">Edit</a>
+        <span>||</span>
+        <a href="/logoutAction">Logout</a>
+       {{/sessionedUser}}
       </div>
       <div class="icon">
         <a href="/list"><i class="glyphicon glyphicon-user"></i></a>

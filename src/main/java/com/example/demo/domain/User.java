@@ -23,6 +23,10 @@ public class User {
 	@Column(nullable = false)
 	private String password;
 	
+	public long getKey() {
+		return key;
+	}
+	
 	public String getId() {
 		return id;
 	}

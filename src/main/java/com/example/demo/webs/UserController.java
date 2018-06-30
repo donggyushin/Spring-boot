@@ -2,7 +2,8 @@ package com.example.demo.webs;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,11 @@ public class UserController {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@GetMapping("")
+	public String Home() {
+		return "index";
+	}
 	
 	@GetMapping("/SignIn")
 	public String SignIn() {
@@ -47,17 +53,53 @@ public class UserController {
 	}
 	
 	@GetMapping("/update/{id}")
-	public String update(@PathVariable("id") Long id,Model model) {
+	public String update(@PathVariable("id") Long id,Model model,HttpSession session) {
 		User user = userRepository.findById(id).get();
+		User sessionedUser = (User)session.getAttribute("sessionedUser");
+		if(sessionedUser == null) {
+			return "redirect:/SignIn";
+		}
+		if(sessionedUser.getKey()!= id) {
+			return "redirect:/";
+		}
+		
 		model.addAttribute("user", user);
 		return "Update/index";
 	}
 	
 	@PostMapping("/updateAction/{id}")
-	public String updateAction(@PathVariable Long id, User updatedUser) {
+	public String updateAction(@PathVariable Long id, User updatedUser, HttpSession session) {
 		User user = userRepository.findById(id).get();
+		User sessionedUser = (User)session.getAttribute("sessionedUser");
+		if(sessionedUser == null) {
+			return "redirect:/SignIn";
+		}
+		if(sessionedUser.getKey()!= id) {
+			return "redirect:/";
+		}
 		user.update(updatedUser);
 		userRepository.save(user);
 		return "redirect:/list";
+	}
+	
+	@PostMapping("/login")
+	public String login(String id, String password, HttpSession session) {
+		User user = userRepository.findByid(id);
+		if(user == null) {
+			return "redirect:/SignIn";
+		}
+		if(!password.equals(user.getPassword())) {
+			return "redirect:/SignIn";
+		}
+		
+		session.setAttribute("sessionedUser", user);
+		
+		return "redirect:/";
+	}
+	
+	@GetMapping("/logoutAction")
+	public String logoutAction(HttpSession session) {
+		session.removeAttribute("sessionedUser");
+		return "redirect:/";
 	}
 }
