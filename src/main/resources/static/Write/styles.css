@@ -39,3 +39,33 @@ body {
   text-decoration: none;
   color: black;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.writingForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.writingForm input {
+  border: 0px;
+  margin-bottom: 15px;
+}
+
+.writingForm textarea {
+  border: 0px;
+  margin-bottom: 15px;
+}
+
+.writingForm .button {
+  background-color: #848587;
+  color: white;
+  font-weight: 600;
+  border-radius: 9px;
+}

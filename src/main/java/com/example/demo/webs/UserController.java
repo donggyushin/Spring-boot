@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.domain.QuestionRepository;
 import com.example.demo.domain.User;
 import com.example.demo.domain.UserRepository;
 
@@ -23,8 +24,12 @@ public class UserController {
 	@Autowired
 	UserRepository userRepository;
 	
+	@Autowired
+	QuestionRepository questionRepository;
+	
 	@GetMapping("")
-	public String Home() {
+	public String Home(Model model) {
+		model.addAttribute("questions", questionRepository.findAll());
 		return "index";
 	}
 	

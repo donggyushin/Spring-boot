@@ -3,14 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./style.css">
 
 </head>
 <body>
-  {{> /include/Navigation/index}}
-  Hello World
-  template
+	{{> /include/Navigation/index}}
+
+	<div class="head">
+		<a href="/writeForm"> <span>write</span>
+		</a>
+	</div>
+
+	<div class="container">
+	{{#questions}}
+		<div class="bulletin__board__row">
+			<a href="#"> <span class="title">{{title}}</span> <span
+				class="writer">{{writer}}</span> <span class="date">date</span>
+			</a>
+		</div>
+	{{/questions}}
+	</div>
 
 </body>
 </html>
