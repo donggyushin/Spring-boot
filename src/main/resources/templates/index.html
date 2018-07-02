@@ -11,16 +11,19 @@
 <body>
 	{{> /include/Navigation/index}}
 
+
+{{#sessionedUser}}
 	<div class="head">
 		<a href="/writeForm"> <span>write</span>
 		</a>
 	</div>
+	{{/sessionedUser}}
 
 	<div class="container">
 	{{#questions}}
 		<div class="bulletin__board__row">
 			<a href="/question/{{id}}"> <span class="title">{{title}}</span> <span
-				class="writer">{{writer}}</span> <span class="date">date</span>
+				class="writer">{{writer}}</span> <span class="date">preparing for date...</span>
 			</a>
 		</div>
 	{{/questions}}

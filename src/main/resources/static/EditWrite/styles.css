@@ -3,8 +3,6 @@
 
 body {
   background-color: #fafafa;
-  display: flex;
-  flex-direction: column;
 }
 .navbar {
   display: flex;
@@ -42,67 +40,32 @@ body {
   color: black;
 }
 
-.Container {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.writingForm {
+  display: flex;
+  flex-direction: column;
   width: 80%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 130px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 100px;
 }
 
-.Container span {
-  margin-bottom: 18px;
-  font-size: 20px;
+.writingForm input {
+  border: 0px;
+  margin-bottom: 15px;
 }
 
-.Container .contents {
-  font-size: 20px;
-  margin-bottom: 70px;
+.writingForm textarea {
+  border: 0px;
+  margin-bottom: 15px;
 }
 
-.comments {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.comments__row {
-  display: flex;
-  width: 100%;
-  margin-left: 30px;
-}
-
-#first {
-  width: 20%;
-}
-
-#second {
-  width: 60%;
-}
-
-#third {
-	
-}
-
-.submitButton {
-  background-color: #74b4e8;
+.writingForm .button {
+  background-color: #848587;
   color: white;
-  padding: 7px;
-  border-radius: 7px;
-  text-decoration: none;
-  margin-right: 7px;
-}
-
-.buttonContainer {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  margin-bottom: 80px;
-}
-
-a {
-  text-decoration: none;
+  font-weight: 600;
+  border-radius: 9px;
 }

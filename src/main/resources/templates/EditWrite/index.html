@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/Write/styles.css">
+</head>
+<body>
+ {{> /include/Navigation/index}}
+
+ <div class="container">
+   <h3>Editing</h3>
+   <hr>
+   {{#question}}
+   <form class="writingForm" action="/questions/editAction/{{id}}" method="post">
+   
+     <input type="text" name="title" placeholder="input title..." value="{{title}}">
+     <textarea name="contents" rows="8" cols="80" placeholder="input contents...">{{contents}}</textarea>
+     <input type="submit" class="button" name="" value="Submit">
+    
+   </form>
+   {{/question}}
+ </div>
+</body>
+</html>

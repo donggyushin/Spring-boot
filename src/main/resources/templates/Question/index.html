@@ -3,22 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="/Question/styles.css">
 </head>
 <body>
-    {{> /include/Navigation/index}}
+	{{> /include/Navigation/index}}
 	<div class="Container">
-	{{#question}}
-    <h2>Question</h2>
-    <hr>
-    <span>{{title}}</span>
-    <span>{{writer}}</span>
-    <hr>
-    <div class="contents">
-      {{contents}}
-    </div>
-    {{/question}}
-  </div>
+		{{#question}}
+		<h2>Question</h2>
+		<hr>
+		<span>{{title}}</span> <span>{{writer}}</span>
+		<hr>
+		<div class="contents">{{contents}}</div>
+
+		<div class="buttonContainer">
+			<a id="editbutton1" href="/questions/edit/{{id}}"> <span
+				class="submitButton">Edit</span>
+			</a> <a id="editbutton1" href="/questions/delete/{{id}}"> <span
+				class="submitButton">delete</span>
+			</a>
+
+		</div>
+
+
+		{{/question}}
+		<div class="comments">
+			<div class="comments__row">
+				<span id="first">writer</span> <span id="second">comments</span> <a
+					id="third" href="#"> <span class="submitButton">Edit</span>
+				</a> <a href="#"> <span class="submitButton">Delete</span>
+				</a>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

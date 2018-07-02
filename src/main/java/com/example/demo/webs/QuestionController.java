@@ -51,6 +51,41 @@ public class QuestionController {
 		return "/Question/index";
 	}
 	
+	@GetMapping("/questions/delete/{id}")
+	public String Delete(@PathVariable long id, HttpSession session) {
+		
+		Question question = questionRepository.findById(id).get();
+		User user = (User)session.getAttribute("sessionedUser");
+		
+		if(!user.getId().equals(question.getWriter())) {
+			return "redirect:/";
+		}
+		
+		questionRepository.deleteById(id);
+		return "redirect:/";
+	}
+	
+	@GetMapping("/questions/edit/{id}")
+	public String Edit(@PathVariable long id, HttpSession session, Model model) {
+		User user = (User)session.getAttribute("sessionedUser");
+		Question question = questionRepository.findById(id).get();
+		
+		if(!user.getId().equals(question.getWriter())) {
+			return "redirect:/";
+		}
+		model.addAttribute("question", question);
+		return "/EditWrite/index";
+	}
+	
+	@PostMapping("/questions/editAction/{id}")
+	public String EditAction(@PathVariable long id, String title, String contents) {
+		
+		Question question = questionRepository.findById(id).get();
+		question.update(title, contents);
+		questionRepository.save(question);
+		return "redirect:/";
+	}
+	
 	
 	
 }
