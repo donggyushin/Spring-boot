@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/Question/styles.css">
+</head>
+<body>
+    {{> /include/Navigation/index}}
+	<div class="Container">
+	{{#question}}
+    <h2>Question</h2>
+    <hr>
+    <span>{{title}}</span>
+    <span>{{writer}}</span>
+    <hr>
+    <div class="contents">
+      {{contents}}
+    </div>
+    {{/question}}
+  </div>
+</body>
+</html>
