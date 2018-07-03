@@ -1,5 +1,7 @@
 package com.example.demo.webs;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.domain.Question;
 import com.example.demo.domain.QuestionRepository;
+import com.example.demo.domain.Reply;
 import com.example.demo.domain.User;
 
 @Controller

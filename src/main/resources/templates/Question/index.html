@@ -26,16 +26,27 @@
 
 		</div>
 
+		<div class="comments__action">
+			<form class="comments__form" action="/reply/create/{{id}}" method="post">
+				<input type="text" class="comments__form__text" name="contents" placeholder="comments..." value="">
+				<input type="submit" class="comments__form__submit" name="" value="submit">
+			</form>
+		</div>
 
-		{{/question}}
+
+		
+		
+		{{#replys}}
 		<div class="comments">
 			<div class="comments__row">
-				<span id="first">writer</span> <span id="second">comments</span> <a
+				<span id="first">{{user.id}}</span> <span id="second">{{contents}}</span> <a
 					id="third" href="#"> <span class="submitButton">Edit</span>
 				</a> <a href="#"> <span class="submitButton">Delete</span>
 				</a>
 			</div>
 		</div>
+		{{/replys}}
+		{{/question}}
 	</div>
 </body>
 </html>

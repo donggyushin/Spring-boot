@@ -1,10 +1,15 @@
 package com.example.demo.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 @Entity
 public class Question {
@@ -16,9 +21,14 @@ public class Question {
 	@Column
 	private String writer;
 	@Column
+	@Lob
 	private String contents;
 	@Column
 	private String title;
+	
+	@OneToMany(mappedBy = "question")
+	@OrderBy("id ASC")
+	private List<Reply> replys;
 	
 	
 	
